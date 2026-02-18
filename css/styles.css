@@ -349,9 +349,9 @@ strong {
 
 .orb-interaction-prompt {
     position: absolute;
-    top: -30px;
-    left: 20px;
-    /* Move closer, slightly overlapping or just inside the container area */
+    top: -20px;
+    left: 18%;
+    /* Centered relative to the orb */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -370,14 +370,13 @@ strong {
     text-align: center;
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-    margin-bottom: 0px;
+    margin-bottom: -5px;
 }
 
 .prompt-arrow {
-    transform: rotate(10deg) scale(1.2);
-    /* Make slightly larger */
-    margin-left: 20px;
-    /* Offset to point better */
+    transform: rotate(20deg) scale(1.1);
+    /* Adjust rotation for the new curve */
+    margin-left: 25px;
 }
 
 @keyframes float-prompt {
