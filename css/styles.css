@@ -337,6 +337,61 @@ strong {
     height: 200px;
     border: none;
     border-radius: var(--border-radius);
+    position: relative;
+    z-index: 10;
+}
+
+.orb-interaction-prompt {
+    position: absolute;
+    top: -50px;
+    /* Adjust based on visual preference */
+    right: 20%;
+    /* Position to the right side */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20;
+    pointer-events: none;
+    animation: float-prompt 3s ease-in-out infinite;
+}
+
+.prompt-text {
+    color: var(--color-white);
+    font-family: var(--font-title);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+.prompt-arrow {
+    transform: rotate(15deg);
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes float-prompt {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .orb-interaction-prompt {
+        right: 5%;
+        top: -60px;
+    }
+
+    .prompt-text {
+        font-size: 0.9rem;
+    }
 }
 
 .flow-diagram-hero {
