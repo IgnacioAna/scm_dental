@@ -349,7 +349,7 @@ strong {
 
 .orb-interaction-prompt {
     position: absolute;
-    top: -40px;
+    top: -30px;
     left: 22%;
     /* Closer to the orb */
     display: flex;
