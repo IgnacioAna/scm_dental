@@ -436,11 +436,10 @@ strong {
     }
 
     .prompt-arrow {
-        transform: rotate(-90deg) scaleX(-1);
-        /* Pointing UP at the orb */
-        margin-left: 0;
-        margin-top: -10px;
-        /* Overlap slightly */
+        transform: rotate(-80deg) scaleX(1);
+        /* Pointing UP-LEFT towards the orb */
+        margin-left: -40px;
+        margin-top: -5px;
     }
 
     .hero-features li {
