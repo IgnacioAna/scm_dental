@@ -349,9 +349,9 @@ strong {
 
 .orb-interaction-prompt {
     position: absolute;
-    top: -20px;
-    left: 18%;
-    /* Centered relative to the orb */
+    top: -10px;
+    left: 22%;
+    /* Closer to the orb */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -374,8 +374,8 @@ strong {
 }
 
 .prompt-arrow {
-    transform: rotate(20deg) scale(1.1);
-    /* Adjust rotation for the new curve */
+    transform: rotate(25deg) scale(1.1);
+    /* Pointing more sharply down/right */
     margin-left: 25px;
 }
 
