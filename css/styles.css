@@ -288,28 +288,30 @@ strong {
     object-fit: cover;
 }
 
-.subheadline {
-    font-size: 1.1rem;
-    margin-bottom: var(--spacing-lg);
-    opacity: 0.9;
-    color: var(--color-white);
-    margin-left: auto;
-    margin-right: auto;
+.hero-content .subheadline {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    /* Tighter spacing */
+    color: var(--color-text-light);
 }
 
 .hero-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    /* Reduced spacing */
     display: inline-block;
     text-align: left;
-    margin-bottom: var(--spacing-lg);
     color: var(--color-white);
 }
 
 .hero-features li {
+    margin-bottom: 0.5rem;
+    /* Tighter items */
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
 }
 
 .hero-features li i {
@@ -326,10 +328,10 @@ strong {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 4rem;
-    /* Increased bottom margin */
-    margin-top: 4rem;
-    /* Increased top margin */
+    margin-bottom: 2rem;
+    /* Reduced from 4rem */
+    margin-top: 2rem;
+    /* Reduced from 4rem */
     position: relative;
     z-index: 5;
 }
@@ -418,17 +420,49 @@ strong {
 
 @media (max-width: 900px) {
     .orb-interaction-prompt {
-        right: 0;
-        top: -70px;
-        /* Move above on smaller screens */
-        flex-direction: column-reverse;
-        /* Arrow points down to orb */
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        top: auto;
+        bottom: -60px;
+        /* Move below the orb */
+        flex-direction: column;
+        /* Text top, arrow bottom pointing up? No, let's keep text top */
+    }
+
+    .prompt-text {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
     }
 
     .prompt-arrow {
-        transform: rotate(90deg);
-        /* Point down */
-        margin-bottom: 5px;
+        transform: rotate(-90deg) scaleX(-1);
+        /* Pointing UP at the orb */
+        margin-left: 0;
+        margin-top: -10px;
+        /* Overlap slightly */
+    }
+
+    .hero-features li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        text-align: left;
+    }
+
+    .hero-features li i {
+        min-width: 20px;
+        /* Prevent shrinking */
+    }
+
+    .hero-orb-frame {
+        height: 200px;
+        /* Slightly smaller on mobile */
+    }
+
+    .hero-orb-container {
+        margin-bottom: 5rem;
+        /* More space for the prompt below */
     }
 }
 
