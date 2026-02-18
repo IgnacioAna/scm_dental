@@ -349,9 +349,9 @@ strong {
 
 .orb-interaction-prompt {
     position: absolute;
-    top: -20px;
-    left: -15%;
-    /* Anchor to the left side */
+    top: -30px;
+    left: 20px;
+    /* Move closer, slightly overlapping or just inside the container area */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -359,6 +359,7 @@ strong {
     pointer-events: none;
     animation: float-prompt 3s ease-in-out infinite;
     width: 140px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 .prompt-text {
@@ -368,14 +369,15 @@ strong {
     font-weight: 700;
     text-align: center;
     line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0px;
 }
 
 .prompt-arrow {
-    transform: rotate(10deg);
-    /* Natural direction (down-right) points to orb */
-    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
+    transform: rotate(10deg) scale(1.2);
+    /* Make slightly larger */
+    margin-left: 20px;
+    /* Offset to point better */
 }
 
 @keyframes float-prompt {
