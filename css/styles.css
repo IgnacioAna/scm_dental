@@ -438,20 +438,25 @@ strong {
     .prompt-arrow {
         transform: rotate(-80deg) scaleX(1);
         /* Pointing UP-LEFT towards the orb */
-        margin-left: -40px;
+        margin-left: -5px;
+        /* Centered relative to text */
         margin-top: -5px;
     }
 
     .hero-features li {
-        flex-direction: column;
+        flex-direction: row;
+        /* Keep icon and text side-by-side */
         align-items: flex-start;
-        gap: 5px;
+        /* Align to top of text */
+        gap: 10px;
         text-align: left;
     }
 
     .hero-features li i {
-        min-width: 20px;
+        min-width: 24px;
         /* Prevent shrinking */
+        margin-top: 2px;
+        /* Align visual center with first line of text */
     }
 
     .hero-orb-frame {
