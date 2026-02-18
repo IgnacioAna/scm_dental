@@ -320,6 +320,25 @@ strong {
     /* Thicker for more impact */
 }
 
+/* AI Orb */
+.hero-orb-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    z-index: 5;
+}
+
+.hero-orb-frame {
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
 .flow-diagram-hero {
     display: flex;
     justify-content: center;

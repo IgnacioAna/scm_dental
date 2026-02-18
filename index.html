@@ -558,6 +558,13 @@
                         demanda.</li>
                 </ul>
 
+                <!-- AI Voice Assistant Orb -->
+                <div class="hero-orb-container reveal reveal-delay-2">
+                    <iframe src="https://iframes.ai/o/1771450073942x735207164098117600?color=228fc7&icon=cross"
+                        allow="microphone" class="hero-orb-frame" id="assistantFrame" title="AI Voice Assistant">
+                    </iframe>
+                </div>
+
 
 
                 <div class="flow-diagram-hero">
@@ -1100,6 +1107,60 @@
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
+    </script>
+    <script>
+        // Reveal animations on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            counter.innerText = '0';
+            const updateCounter = () => {
+                const target = +counter.getAttribute('data-target');
+                const c = +counter.innerText;
+                const increment = target / 200;
+                if (c < target) {
+                    counter.innerText = `${Math.ceil(c + increment)}`;
+                    setTimeout(updateCounter, 20);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            // Simple trigger on load
+            updateCounter();
+        });
+
+        // AI Orb Microphone Permission Check
+        const frame = document.getElementById('assistantFrame');
+        if (frame) {
+            frame.addEventListener('load', () => {
+                if (navigator.permissions && navigator.permissions.query) {
+                    navigator.permissions.query({ name: 'microphone' })
+                        .then(result => {
+                            if (result.state === 'granted') {
+                                console.log('Microphone access already granted');
+                            } else if (result.state === 'prompt') {
+                                console.log('User will be prompted for microphone access');
+                            }
+                        })
+                        .catch(err => console.log('Mic permission query not supported', err));
+                }
+            });
+        }
     </script>
 </body>
 
