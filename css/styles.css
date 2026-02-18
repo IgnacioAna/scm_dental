@@ -326,9 +326,10 @@ strong {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: var(--spacing-lg);
-    margin-top: 3rem;
-    /* Added space as requested */
+    margin-bottom: 4rem;
+    /* Increased bottom margin */
+    margin-top: 4rem;
+    /* Increased top margin */
     position: relative;
     z-index: 5;
 }
@@ -353,7 +354,8 @@ strong {
 .hero-orb-frame {
     width: 100%;
     /* max-width is handled by wrapper now, but nice to keep */
-    height: 200px;
+    height: 250px;
+    /* Increased height */
     border: none;
     border-radius: var(--border-radius);
     position: relative;
@@ -363,28 +365,32 @@ strong {
 .orb-wrapper {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
+    /* Increased max-width */
 }
 
 .orb-interaction-prompt {
     position: absolute;
-    top: -30px;
-    left: 22%;
-    /* Closer to the orb */
+    top: -20px;
+    /* Adjusted top position relative to larger orb */
+    left: 20%;
+    /* Adjusted left position */
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 20;
     pointer-events: none;
     animation: float-prompt 3s ease-in-out infinite;
-    width: 140px;
+    width: 160px;
+    /* Slightly wider */
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 .prompt-text {
     color: var(--color-white);
     font-family: var(--font-title);
-    font-size: 1rem;
+    font-size: 1.1rem;
+    /* Slightly larger text */
     font-weight: 700;
     text-align: center;
     line-height: 1.2;
@@ -393,8 +399,8 @@ strong {
 }
 
 .prompt-arrow {
-    transform: rotate(25deg) scale(1.1);
-    /* Pointing more sharply down/right */
+    transform: rotate(25deg) scale(1.3);
+    /* Larger arrow */
     margin-left: 25px;
 }
 
