@@ -333,7 +333,7 @@ strong {
 
 .hero-orb-frame {
     width: 100%;
-    max-width: 600px;
+    /* max-width is handled by wrapper now, but nice to keep */
     height: 200px;
     border: none;
     border-radius: var(--border-radius);
@@ -341,18 +341,24 @@ strong {
     z-index: 10;
 }
 
+.orb-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
 .orb-interaction-prompt {
     position: absolute;
-    top: -50px;
-    /* Adjust based on visual preference */
-    right: 20%;
-    /* Position to the right side */
+    top: -40px;
+    right: -120px;
+    /* Anchor to the right of the orb */
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 20;
     pointer-events: none;
     animation: float-prompt 3s ease-in-out infinite;
+    width: 140px;
 }
 
 .prompt-text {
@@ -367,7 +373,8 @@ strong {
 }
 
 .prompt-arrow {
-    transform: rotate(15deg);
+    transform: scaleX(-1) rotate(15deg);
+    /* Point towards the orb (left) */
     filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.3));
 }
 
@@ -383,14 +390,19 @@ strong {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .orb-interaction-prompt {
-        right: 5%;
-        top: -60px;
+        right: 0;
+        top: -70px;
+        /* Move above on smaller screens */
+        flex-direction: column-reverse;
+        /* Arrow points down to orb */
     }
 
-    .prompt-text {
-        font-size: 0.9rem;
+    .prompt-arrow {
+        transform: rotate(90deg);
+        /* Point down */
+        margin-bottom: 5px;
     }
 }
 
