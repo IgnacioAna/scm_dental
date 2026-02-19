@@ -428,7 +428,7 @@ strong {
     .orb-interaction-prompt {
         right: auto;
         left: 10px;
-        /* Align to left side */
+        /* Moved right by 20px (from -10px) per user request */
         transform: none;
         /* Remove center transform */
         top: -10px;
