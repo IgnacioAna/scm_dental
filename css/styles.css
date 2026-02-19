@@ -2346,48 +2346,31 @@ section {
 }
 
 @media (max-width: 768px) {
-    /* Force Dark Background on Bio for Mobile */
-    @media (max-width: 768px) {
-        #quien-soy {
-            background-color: #050b14 !important;
-            color: white !important;
-        }
 
-        #quien-soy .bio-content {
-            background-color: transparent !important;
-        }
+    /* Force Dark Background on Bio for Mobile */
+    #quien-soy {
+        background-color: #050b14 !important;
+        color: white !important;
     }
 
+    #quien-soy .bio-content {
+        background-color: transparent !important;
+    }
 
     /* Mobile Alignment Helpers */
-    @media (max-width: 768px) {
-        .text-center-mobile {
-            text-align: center;
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-
-        .display-block-mobile {
-            display: block;
-            margin-top: 0.5rem;
-        }
-
-        /* Ensure Header flex wraps correctly */
-        .header-content {
-            flex-direction: column;
-        }
+    .text-center-mobile {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1rem;
     }
 
-
-
-    /* Force Dark Background on Bio for Mobile */
-    @media (max-width: 768px) {
-        #quien-soy {
-            background-color: #050b14 !important;
-            color: white !important;
-        }
-
-        #quien-soy .bio-content {
-            background-color: transparent !important;
-        }
+    .display-block-mobile {
+        display: block;
+        margin-top: 0.5rem;
     }
+
+    /* Ensure Header flex wraps correctly */
+    .header-content {
+        flex-direction: column;
+    }
+}
