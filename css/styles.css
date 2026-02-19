@@ -328,17 +328,17 @@ strong {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 0rem;
+    margin-top: 4rem;
     position: relative;
     z-index: 5;
 }
 
 @media (max-width: 900px) {
     .hero-orb-container {
-        margin-top: 3rem;
+        margin-top: 2rem !important;
         /* More space for prompt */
-        margin-bottom: 2rem;
+        margin-bottom: 0rem !important;
     }
 }
 
@@ -473,13 +473,7 @@ strong {
         /* Slightly smaller on mobile */
     }
 
-    .hero-orb-container {
-        margin-top: 4rem;
-        /* Increased to accommodate the lower prompt */
-        margin-bottom: 0rem;
-        /* Removed margin to pull diagram closer */
-    }
-
+    /* Removed margin to pull diagram closer */
     .flow-diagram-hero {
         margin-top: 0;
         /* Ensure no top margin on flow diagram */
