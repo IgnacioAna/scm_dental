@@ -4,1148 +4,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCM Dental - Piloto Estética Dental</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <meta name="description"
-        content="Sistema de conversión para blanqueamiento y alineadores. 14 días de implementación + 30 días de demanda generada.">
+    <title>SCM Dental - Piloto 7 Días</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/styles.css?v=5">
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        /* EMERGENCY MOBILE FIXES */
-        @media (max-width: 768px) {
-
-            /* 0. GLOBAL FORCE FONT */
-            body,
-            h1,
-            h2,
-            h3,
-            p,
-            a,
-            li,
-            span,
-            div {
-                font-family: 'Inter', sans-serif !important;
-                letter-spacing: -0.02em !important;
-            }
-
-            /* 1. Hero Formatting - Even Distribution */
-            .hero-content {
-                padding-top: 2.5rem !important;
-                padding-bottom: 2.5rem !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                gap: 2rem !important;
-            }
-
-            /* Reset ALL child margins so gap is the only thing spacing them */
-            .hero-content>* {
-                margin-top: 0 !important;
-                margin-bottom: 0 !important;
-            }
-
-            .hero-content .cta-group {
-                margin-top: 0 !important;
-            }
-
-            /* Hero text sizing - prevent orphan wrapping */
-            .hero-content h1 {
-                font-size: 1.35rem !important;
-                line-height: 1.2 !important;
-                white-space: nowrap !important;
-            }
-
-            .hero-content .subheadline-h2 {
-                font-size: 0.95rem !important;
-                line-height: 1.5 !important;
-                padding: 0 0.5rem !important;
-            }
-
-            /* Fix Text Wrapping in Features */
-            .hero-features {
-                margin: 0 !important;
-                padding-left: 0 !important;
-            }
-
-            .hero-features li {
-                display: flex !important;
-                align-items: flex-start !important;
-                text-align: left !important;
-                margin-bottom: 0.75rem !important;
-                line-height: 1.4 !important;
-            }
-
-            .hero-features li i {
-                min-width: 20px !important;
-                /* Prevent icon squashing */
-                margin-right: 0.75rem !important;
-                margin-top: 0.15rem !important;
-            }
-
-            /* Flow Diagram - Premium Vertical Stack */
-            .flow-diagram-hero {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                gap: 1rem !important;
-                /* Balanced gap */
-                margin: 0 !important;
-                padding: 1.75rem 1rem !important;
-                margin-bottom: 0 !important;
-                width: 100% !important;
-                flex-grow: 0 !important;
-                gap: 0.25rem !important;
-            }
-
-            .flow-step {
-                background: rgba(255, 255, 255, 0.03) !important;
-                border: 1px solid rgba(255, 255, 255, 0.15) !important;
-                border-radius: 6px !important;
-                padding: 0.55rem 1rem !important;
-                text-align: center !important;
-                width: 100% !important;
-                max-width: 220px !important;
-                color: rgba(255, 255, 255, 0.9) !important;
-                font-size: 0.85rem !important;
-                font-weight: 500 !important;
-                letter-spacing: 0.02em !important;
-                backdrop-filter: blur(4px);
-            }
-
-            .flow-step.highlight {
-                border-color: #4ade80 !important;
-                color: #4ade80 !important;
-                background: rgba(74, 222, 128, 0.05) !important;
-                box-shadow: 0 0 15px rgba(74, 222, 128, 0.15) !important;
-            }
-
-            .flow-arrow {
-                transform: rotate(90deg) !important;
-                margin: -0.75rem 0 !important;
-                color: rgba(255, 255, 255, 0.3) !important;
-                font-size: 1rem !important;
-            }
-
-            /* 2. Implementation Section - Rich Tones */
-            .implementation-section {
-                background: linear-gradient(180deg, #f0f2f5 0%, #e8eaef 100%) !important;
-                padding-top: 2.5rem !important;
-                padding-bottom: 2.5rem !important;
-            }
-
-            /* 3. Timeline Entries - Warm Cards */
-            .timeline-entry {
-                background: #ffffff !important;
-                color: #333333 !important;
-                border: none !important;
-                border-left: 3px solid #ff6b35 !important;
-                /* Orange accent */
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
-                margin-bottom: 1.25rem !important;
-                padding: 1.5rem !important;
-                border-radius: 8px !important;
-                transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-            }
-
-            .timeline-entry h3 {
-                color: #0a1628 !important;
-                /* Dark blue brand */
-                font-size: 1.15rem !important;
-                margin-bottom: 0.5rem !important;
-                font-weight: 700 !important;
-            }
-
-            .timeline-entry li {
-                color: #555555 !important;
-                font-size: 0.95rem !important;
-                line-height: 1.6 !important;
-            }
-
-            /* 4. Markers - Orange Brand */
-            .entry-marker {
-                background: linear-gradient(135deg, #ff6b35, #ff8a5c) !important;
-                color: #ffffff !important;
-                padding: 0.3rem 0.85rem !important;
-                border-radius: 20px !important;
-                font-size: 0.75rem !important;
-                font-weight: 700 !important;
-                display: inline-block !important;
-                margin-bottom: 0.75rem !important;
-                letter-spacing: 0.03em !important;
-                box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3) !important;
-            }
-
-            /* Implementation Note */
-            .implementation-note {
-                color: #666 !important;
-                font-style: italic !important;
-                text-align: center !important;
-                margin: 1.5rem 0 !important;
-                font-size: 0.9rem !important;
-            }
-
-            /* Guarantee Box - Premium Dark */
-            .guarantee-box {
-                background: linear-gradient(135deg, #0a1628, #132744) !important;
-                color: #ffffff !important;
-                border: 1px solid rgba(255, 107, 53, 0.3) !important;
-                border-radius: 10px !important;
-                padding: 1.5rem !important;
-                text-align: center !important;
-            }
-
-            .guarantee-box h3 {
-                color: #ff6b35 !important;
-                font-size: 1.1rem !important;
-                margin-bottom: 0.75rem !important;
-            }
-
-            .guarantee-box p {
-                color: rgba(255, 255, 255, 0.85) !important;
-                line-height: 1.6 !important;
-                font-size: 0.9rem !important;
-            }
-
-            .guarantee-disclaimer {
-                color: rgba(255, 255, 255, 0.5) !important;
-                font-size: 0.8rem !important;
-                margin-top: 0.75rem !important;
-            }
-
-            .timeline-vertical {
-                padding-left: 0 !important;
-                border: none !important;
-                margin-left: 0 !important;
-                margin-top: 1rem !important;
-            }
-
-            .timeline-entry::before {
-                display: none !important;
-            }
-
-            /* 5. FAQ - Clean */
-            .faq-item {
-                background: #ffffff !important;
-                border: 1px solid rgba(0, 0, 0, 0.08) !important;
-                margin-bottom: 0.75rem !important;
-            }
-
-            .faq-item summary {
-                color: #111111 !important;
-                font-weight: 600 !important;
-                font-size: 0.95rem !important;
-            }
-
-            .faq-item p {
-                color: #555555 !important;
-                font-size: 0.9rem !important;
-            }
-
-            /* 6. Animations (Controlled) */
-            .reveal {
-                opacity: 0;
-                transform: translateY(25px);
-                transition: opacity 0.6s ease-out, transform 0.6s ease-out !important;
-            }
-
-            .reveal.active {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-                visibility: visible !important;
-            }
-
-            /* Staggered timeline animations */
-            .timeline-entry.reveal {
-                opacity: 0;
-                transform: translateX(-30px);
-                transition: opacity 0.5s ease-out, transform 0.5s ease-out !important;
-            }
-
-            .timeline-entry.reveal.active {
-                opacity: 1 !important;
-                transform: translateX(0) !important;
-            }
-
-            .timeline-entry:nth-child(1) {
-                transition-delay: 0.1s !important;
-            }
-
-            .timeline-entry:nth-child(2) {
-                transition-delay: 0.3s !important;
-            }
-
-            .timeline-entry:nth-child(3) {
-                transition-delay: 0.5s !important;
-            }
-
-            /* Guarantee box animation */
-            .guarantee-box {
-                opacity: 0;
-                transform: scale(0.95);
-                transition: opacity 0.6s ease-out 0.7s, transform 0.6s ease-out 0.7s !important;
-            }
-
-            .implementation-section.reveal.active .guarantee-box {
-                opacity: 1 !important;
-                transform: scale(1) !important;
-            }
-
-            /* 7. Audience Section - Spacing & Alignment */
-            .audience-section .container {
-                padding-left: 1.5rem !important;
-                padding-right: 1.5rem !important;
-            }
-
-            .audience-col {
-                padding: 1rem 0.5rem !important;
-            }
-
-            .audience-col h3 {
-                text-align: left !important;
-                margin-bottom: 0.75rem !important;
-            }
-
-            .check-list,
-            .cross-list {
-                padding-left: 0 !important;
-                /* Reset ul padding */
-                list-style: none !important;
-            }
-
-            .check-list li,
-            .cross-list li {
-                position: relative !important;
-                padding-left: 2.5rem !important;
-                /* Big space for the absolute icon */
-                margin-bottom: 0.75rem !important;
-                line-height: 1.5 !important;
-            }
-
-            .check-list li::before,
-            .cross-list li::before {
-                left: 0.5rem !important;
-                /* Push icon away from left edge */
-            }
-
-            /* 8. Diagnostic Button Spacing */
-            .text-center.mt-lg {
-                margin-top: 3rem !important;
-                /* Push button away from cards */
-            }
-
-            .btn.btn-primary {
-                margin-top: 1.5rem !important;
-            }
-
-            .cta-group {
-                margin-bottom: 2rem !important;
-            }
-
-            /* 9. Bio Section - DARK OVERRIDE */
-            #quien-soy {
-                background-color: #0b1c3e !important;
-                background-image: none !important;
-                border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-                padding-top: 4rem !important;
-                padding-bottom: 4rem !important;
-            }
-
-            #quien-soy h2,
-            #quien-soy p,
-            #quien-soy li {
-                color: #ffffff !important;
-            }
-
-            #quien-soy .bio-card {
-                background: rgba(255, 255, 255, 0.05) !important;
-                border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            }
-
-            #quien-soy .problem h3 {
-                color: #ff6b6b !important;
-            }
-
-            #quien-soy .solution h3 {
-                color: #4ade80 !important;
-            }
-        }
-
-        /* ====== GLOBAL ANIMATIONS (Desktop + Mobile) ====== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
-        }
-
-        /* Staggered timeline slide-in */
-        .timeline-entry.reveal {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .timeline-entry.reveal.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .timeline-entry:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-
-        .timeline-entry:nth-child(2) {
-            transition-delay: 0.3s;
-        }
-
-        .timeline-entry:nth-child(3) {
-            transition-delay: 0.5s;
-        }
-
-        /* Guarantee box scale-in */
-        .guarantee-box {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.6s ease-out 0.7s, transform 0.6s ease-out 0.7s;
-        }
-
-        .implementation-section.reveal.active .guarantee-box {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* Hero feature items stagger */
-        .reveal-delay-1 {
-            transition-delay: 0.2s !important;
-        }
-
-        .reveal-delay-2 {
-            transition-delay: 0.4s !important;
-        }
-
-        /* KPI widgets - always visible */
-        .kpi-widget {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .kpi-widget:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-
-        .kpi-widget:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-
-        .kpi-widget:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-
-        .kpi-widget:nth-child(4) {
-            transition-delay: 0.4s;
-        }
-
-        .kpi-widget:nth-child(5) {
-            transition-delay: 0.5s;
-        }
-
-        /* FAQ items - always visible (details elements handle interaction) */
-        .faq-item {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .faq-item:nth-child(1) {
-            transition-delay: 0.1s;
-        }
-
-        .faq-item:nth-child(2) {
-            transition-delay: 0.2s;
-        }
-
-        .faq-item:nth-child(3) {
-            transition-delay: 0.3s;
-        }
-
-        .faq-item:nth-child(4) {
-            transition-delay: 0.4s;
-        }
-
-        .faq-item:nth-child(5) {
-            transition-delay: 0.5s;
-        }
-
-        /* Audience columns - always visible */
-        .audience-col {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .audience-col:nth-child(1) {
-            transition-delay: 0.15s;
-        }
-
-        .audience-col:nth-child(2) {
-            transition-delay: 0.35s;
-        }
-
-        /* Deliverables section spacing fix */
-        .deliverables-section {
-            padding-top: 4rem !important;
-            padding-bottom: 5rem !important;
-        }
-
-        .deliverables-section .text-center.mt-lg {
-            margin-top: 3rem !important;
-            margin-bottom: 2rem !important;
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="sticky-header">
-        <div class="container header-content">
-            <div class="logo">
-                <span class="brand-main">SCM Dental</span>
-                <div class="brand-subtitle"><span class="system-status"></span>Infraestructura de crecimiento IA</div>
+    <!-- 1) NAV + HERO -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">SCM Dental</div>
+            <div class="nav-right desktop-only">
+                <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+                <a href="#opcional" class="nav-link">Opcional</a>
+                <a href="#faq" class="nav-link">Preguntas</a>
+                <a href="#agendar" class="btn btn-primary nav-btn">Agendar una llamada (15 min)</a>
             </div>
-            <nav>
-                <button class="mobile-menu-btn" aria-label="Menu">
-                    <i data-feather="menu"></i>
-                </button>
-                <ul class="nav-links">
-                    <li><a href="#como-funciona">Cómo funciona</a></li>
-                    <li><a href="#que-incluye">Qué incluye</a></li>
-                    <li><a href="#implementacion">Implementación</a></li>
-                    <li><a href="#metrics">Métricas</a></li>
-                    <li><a href="#quien-soy">Quién soy</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#diagnostico" class="nav-cta">Diagnóstico</a></li>
-                </ul>
-            </nav>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Pasá de mensajes en Instagram a turnos agendados en 7 días.</h1>
+            <p class="subheadline">Dejamos armado un sistema para que cuando alguien pregunte por blanqueamiento o
+                alineadores, reciba respuesta rápida, pueda reservar evaluación y quede todo ordenado para tu equipo.
+            </p>
+
+            <ul class="hero-bullets">
+                <li><i data-feather="check"></i> Responde al instante (24/7)</li>
+                <li><i data-feather="check"></i> Manda a reservar turno</li>
+                <li><i data-feather="check"></i> No se pierde ningún mensaje: queda todo ordenado</li>
+            </ul>
+
+            <div class="cta-group">
+                <a href="#agendar" class="btn btn-primary btn-large">Agendar una llamada (15 min)</a>
+                <a href="#ejemplo" class="btn btn-secondary btn-large">Ver ejemplo (60s)</a>
+            </div>
+
+            <div class="badge">Piloto 7 días • Solo Instagram • Sin WhatsApp • Sin llamadas • Sin anuncios</div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero blueprint-bg">
-            <div class="container hero-content">
-                <h1>No pierdas <span class="text-orange">nunca más</span> un paciente.</h1>
-                <h2 class="subheadline-h2">En 14 días instalo SCM para <span class="text-accent">odontólogos</span> que
-                    quieran lograr un <span class="counter text-accent" data-target="20" data-prefix="+"
-                        data-suffix="%">+20%</span> de
-                    turnos
-                    confirmados por Instagram.</h2>
-                <p class="subheadline">Especial para <strong>Blanqueamiento</strong> y <strong>Alineadores</strong>.</p>
-
-                <ul class="hero-features">
-                    <li class="reveal reveal-delay-1 feature-item">
-                        <i data-feather="check-circle" class="feature-icon"></i> <strong class="text-white">Dedicate a
-                            lo que más
-                            te gusta.</strong>
-                    </li>
-                    <li class="reveal reveal-delay-2 feature-item">
-                        <i data-feather="check-circle" class="feature-icon"></i> <strong class="text-white">Orden y
-                            automatización total de
-                            tu agenda.</strong>
-                    </li>
-                    <li class="reveal reveal-delay-3 highlight-bonus">
-                        <i data-feather="plus-circle"></i> <strong>Bonus&nbsp;1:</strong> 30 días de campañas para
-                        activar demanda.
-                    </li>
-                    <li class="reveal reveal-delay-3 highlight-bonus">
-                        <i data-feather="plus-circle"></i> <strong>Bonus&nbsp;2:</strong> CRM + seguimiento +
-                        recordatorios + nutrición.
-                    </li>
-                </ul>
-
-                <!-- AI Voice Assistant Orb -->
-                <div class="hero-orb-container reveal reveal-delay-2">
-                    <div class="orb-wrapper">
-                        <div class="orb-interaction-prompt">
-                            <span class="prompt-text">Dale clic para<br>hablar con la IA</span>
-                            <svg class="prompt-arrow" width="50" height="50" viewBox="0 0 50 50" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 10 C 15 10, 20 40, 50 45" stroke="white" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" fill="none"
-                                    marker-end="url(#arrowhead)" />
-                                <defs>
-                                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5"
-                                        orient="auto">
-                                        <polygon points="0 0, 10 3.5, 0 7" fill="white" />
-                                    </marker>
-                                </defs>
-                            </svg>
-                        </div>
-                        <iframe src="https://iframes.ai/o/1771450073942x735207164098117600?color=228fc7&icon=cross"
-                            allow="microphone" class="hero-orb-frame" id="assistantFrame" title="AI Voice Assistant">
-                        </iframe>
-                    </div>
-                </div>
-
-
-
-                <div class="flow-diagram-hero">
-                    <div class="flow-step">Anuncio/IG</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">DM</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">3 Preguntas</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step">Turno</div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-step highlight">Confirmación</div>
-                </div>
-
-                <div class="cta-group">
-                    <a href="#diagnostico" class="btn btn-primary">Agendá Demo (30 min)</a>
-                    <p class="microcopy">30 min — vemos si tenés demanda suficiente y dónde se está perdiendo la
-                        conversión.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Problem Section -->
-        <section class="problem-section light-section reveal">
+        <!-- 2) QUÉ HACEMOS -->
+        <section id="que-hacemos" class="section-light">
             <div class="container">
-                <div class="grid-3">
-                    <div class="card problem-card reveal">
-                        <i data-feather="clock" class="card-icon"></i>
-                        <h3>Responden tarde = Se enfría</h3>
-                        <p>El paciente consulta y espera respuesta inmediata. Si tardás horas, ya consultó a otro.</p>
+                <h2 class="section-title">Qué dejamos armado</h2>
+                <div class="grid-cards">
+                    <div class="card">
+                        <h3>Atención por Instagram</h3>
+                        <p>La IA responde y guía la conversación para saber qué necesita la persona.</p>
                     </div>
-                    <div class="card problem-card">
-                        <i data-feather="message-square" class="card-icon"></i>
-                        <!-- Changed from chat-off as it might not affect feather icons standard set, using message-square -->
-                        <h3>No hay seguimiento = No agenda</h3>
-                        <p>La mayoría no cierra en el primer mensaje. Sin reactivación sistemática, perdés el 80% de los
-                            interesados.</p>
+                    <div class="card">
+                        <h3>Turno de evaluación</h3>
+                        <p>Le manda un link para reservar una evaluación estética.</p>
                     </div>
-                    <div class="card problem-card">
-                        <i data-feather="eye-off" class="card-icon"></i>
-                        <h3>No hay control = Caos</h3>
-                        <p>No sabés cuántos escribieron, cuántos agendaron y cuántos faltaron. Imposible mejorar lo que
-                            no medís.</p>
+                    <div class="card">
+                        <h3>Orden para tu equipo</h3>
+                        <p>Cada consulta queda registrada y ordenada (nuevo / interesado / turno enviado / agendado / no
+                            respondió).</p>
                     </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- What We Do (Pilot) -->
-        <section id="como-funciona" class="pilot-scope-section blueprint-bg">
-            <div class="container">
-                <h2 class="section-title text-white">Qué hacemos en este piloto</h2>
-                <div class="grid-2">
-                    <div class="scope-text-block">
-                        <div class="block-number">1</div>
-                        <h3>Generamos Consultas</h3>
-                        <p>Configuración y gestión de campañas en Meta Ads hacia Instagram durante 30 días. Objetivo:
-                            Mensajes cualificados (blanqueamiento o alineadores).</p>
-                    </div>
-                    <div class="scope-text-block">
-                        <div class="block-number">2</div>
-                        <h3>Convertimos y Agendamos</h3>
-                        <p>Instalamos la infraestructura: Pipeline, Mensajes rápidos, Recordatorios y Tablero de
-                            Control.</p>
-                        <p class="highlight-text">"Además del sistema, activamos la generación de consultas con
-                            campañas."</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Deliverables (What I Install) -->
-        <section id="que-incluye" class="deliverables-section light-section reveal"
-            style="padding-bottom: 5rem !important;">
-            <div class="container">
-                <h2 class="section-title">Qué instalo en 14 días</h2>
-                <div class="grid-2">
-                    <div class="card deliverable-card">
-                        <div class="card-header-badge">A</div>
-                        <h3>Sistema de Conversión (Core)</h3>
-                        <ul class="technical-list">
-                            <li>Pipeline Operativo (Nuevo → Respondido → Calificado → Turno → Cerrado).</li>
-                            <li>Plantillas de mensajes para IG DM listas para usar.</li>
-                            <li><strong>Workflow Lead Nuevo:</strong> Respuesta + Calificación + Propuesta.</li>
-                            <li><strong>Workflow No respondió:</strong> Seguimiento 24h / 72h / 5 días.</li>
-                            <li><strong>Workflow No-show:</strong> Re-agenda + Refuerzo.</li>
-                            <li>Sistema de Recordatorios por canal disponible.</li>
-                            <li>Tablero de métricas clave.</li>
-                            <li>SOP recepción: rutina diaria 10 min + entrenamiento.</li>
-                        </ul>
-                    </div>
-                    <div class="card deliverable-card">
-                        <div class="card-header-badge">B</div>
-                        <h3>Generación de Consultas</h3>
-                        <ul class="technical-list">
-                            <li>Campaña inicial Meta Ads → Instagram (objetivo mensajes).</li>
-                            <li>Setup mínimo: 1 servicio (blanqueamiento o alineadores).</li>
-                            <li>Redacción de 1 oferta + 1 ángulo principal.</li>
-                            <li>Creativos simples y directos (foco en la oferta).</li>
-                            <li><strong>30 días de gestión</strong> para generar demanda y probar el sistema.</li>
-                            <li class="note">Nota: Inversión publicitaria a cargo del cliente.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="text-center mt-lg" style="padding-bottom: 2rem;">
-                    <a href="#diagnostico" class="btn btn-primary">Agendá Diagnóstico (15 min)</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Live Flow Section -->
-        <section class="live-flow-section blueprint-bg">
-            <div class="container">
-                <h2 class="section-title text-white">Cómo se ve en la práctica</h2>
-                <div class="timeline-flow">
-                    <div class="flow-node">
-                        <span class="node-label">Anuncio</span>
-                        <p>Paciente ve oferta en IG</p>
-                    </div>
-                    <div class="flow-connector">↓</div>
-                    <div class="flow-node">
-                        <span class="node-label">Consultas</span>
-                        <p>Envía DM. Auto-respuesta inmediata.</p>
-                    </div>
-                    <div class="flow-connector">↓</div>
-                    <div class="flow-node">
-                        <span class="node-label">Filtro</span>
-                        <p>3 preguntas clave de pre-calificación.</p>
-                    </div>
-                    <div class="flow-connector">↓</div>
-                    <div class="flow-node">
-                        <span class="node-label">Agenda</span>
-                        <p>Propuesta de turno directa.</p>
-                    </div>
-                    <div class="flow-connector">↓</div>
-                    <div class="flow-node highlight">
-                        <span class="node-label">Confirmación</span>
-                        <p>Recordatorio automático pre-cita.</p>
-                    </div>
-                    <div class="flow-connector">↓</div>
-                    <div class="flow-node">
-                        <span class="node-label">Resultado</span>
-                        <p>Asiste (venta) o Recuperación (re-agenda).</p>
-                    </div>
-                </div>
-                <p class="section-footer-text text-white">Esto no es marketing. Es proceso + control.</p>
-            </div>
-        </section>
-
-        <!-- Metrics Section -->
-        <section id="metrics" class="kpis-section light-section reveal">
-            <div class="container">
-                <h2 class="section-title">Métricas que controlás</h2>
-                <div class="kpi-dashboard-grid">
-                    <div class="kpi-widget kpi-positive">
-                        <div class="kpi-icon-wrapper">
-                            <i data-feather="zap"></i>
-                        </div>
-                        <div class="widget-label">Speed to Lead</div>
-                        <div class="widget-value">Tiempo Resp.</div>
-                        <div class="widget-desc">Velocidad de primera respuesta</div>
-                    </div>
-                    <div class="kpi-widget kpi-positive">
-                        <div class="kpi-icon-wrapper">
-                            <i data-feather="user-check"></i>
-                        </div>
-                        <div class="widget-label">Show Rate</div>
-                        <div class="widget-value">% Asistencia</div>
-                        <div class="widget-desc">Pacientes que asisten al turno</div>
-                    </div>
-                    <div class="kpi-widget kpi-negative">
-                        <div class="kpi-icon-wrapper">
-                            <i data-feather="user-x"></i>
-                        </div>
-                        <div class="widget-label">No-Show Rate</div>
-                        <div class="widget-value">% Ausentismo</div>
-                        <div class="widget-desc">Pacientes que no se presentan</div>
-                    </div>
-                    <div class="kpi-widget kpi-warning">
-                        <div class="kpi-icon-wrapper">
-                            <i data-feather="alert-circle"></i>
-                        </div>
-                        <div class="widget-label">Pendientes</div>
-                        <div class="widget-value">&gt; <span class="counter" data-target="48" data-suffix="h">48h</span>
-                        </div>
-                        <div class="widget-desc">Consultas sin responder</div>
-                    </div>
-                    <div class="kpi-widget kpi-recover">
-                        <div class="kpi-icon-wrapper">
-                            <i data-feather="refresh-cw"></i>
-                        </div>
-                        <div class="widget-label">Recuperados</div>
-                        <div class="widget-value">Re-agendados</div>
-                        <div class="widget-desc">Pacientes recuperados post no-show</div>
+                    <div class="card">
+                        <h3>Seguimiento simple</h3>
+                        <p>Si la persona no reserva, se le vuelve a escribir 2 o 3 veces para ayudarla a agendar.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Implementation Section -->
-        <section id="implementacion" class="implementation-section light-section reveal">
+        <!-- 3) CÓMO SE HACE EN 7 DÍAS -->
+        <section id="como-funciona" class="section-gray">
             <div class="container">
-                <h2 class="section-title text-white">Implementación</h2>
-                <div class="timeline-vertical">
-                    <!-- Day 1-2 -->
-                    <div class="timeline-entry reveal">
-                        <div class="entry-marker">Día 1-2</div>
-                        <div class="entry-content">
-                            <h3>Setup Base</h3>
-                            <ul class="timeline-list">
-                                <li>Definimos qué vendemos primero: blanqueamiento o alineadores</li>
-                                <li>Dejamos listo el sistema de turnos y seguimiento</li>
-                                <li>Conectamos Instagram para que las consultas entren ordenadas</li>
-                                <li>Configuramos la IA para responder, calificar y proponer turno</li>
-                                <li>Activamos la campaña inicial para empezar a generar consultas</li>
-                            </ul>
-                        </div>
+                <h2 class="section-title">Cómo funciona el piloto (7 días)</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="day-marker">Día 1</div>
+                        <p>Armamos el sistema de turnos (evaluación estética) y el orden de los contactos.</p>
                     </div>
-                    <!-- Day 3-7 -->
-                    <div class="timeline-entry reveal">
-                        <div class="entry-marker">Día 3-7</div>
-                        <div class="entry-content">
-                            <h3>Ajustes & Pruebas</h3>
-                            <ul class="timeline-list">
-                                <li>Probamos el flujo completo: anuncio → mensaje → turno → confirmación</li>
-                                <li>Ajustamos la IA para que convierta mejor (preguntas, tono, objeciones)</li>
-                                <li>Activamos recordatorios para bajar no-shows</li>
-                                <li>Ajustamos anuncios con datos reales (no teoría)</li>
-                                <li>Revisamos lo básico: tiempo de respuesta, turnos propuestos, confirmados</li>
-                            </ul>
-                        </div>
+                    <div class="timeline-item">
+                        <div class="day-marker">Día 2</div>
+                        <p>Configuramos la IA en Instagram con reglas claras (qué puede y qué no puede decir).</p>
                     </div>
-                    <!-- Day 8-14 -->
-                    <div class="timeline-entry reveal">
-                        <div class="entry-marker">Día 8-14</div>
-                        <div class="entry-content">
-                            <h3>Estabilización</h3>
-                            <ul class="timeline-list">
-                                <li>Dejamos el sistema estable para sostener volumen</li>
-                                <li>Ordenamos una rutina mínima para que no se caiga (simple, diaria)</li>
-                                <li>Optimizamos anuncios para mejorar calidad de consulta</li>
-                                <li>Te queda una base lista para seguir escalando sin caos</li>
-                            </ul>
-                        </div>
+                    <div class="timeline-item">
+                        <div class="day-marker">Día 3</div>
+                        <p>Cargamos la información básica: horarios, zona, formas de pago y cómo trabajan.</p>
                     </div>
-                </div>
-
-                <p class="implementation-note">El control es inmediato. El rendimiento depende del volumen y de sostener
-                    el seguimiento.</p>
-
-                <div class="guarantee-box alert-box">
-                    <h3>Garantía de gestión</h3>
-                    <p>Si después de 30 días no vemos tracción, te doy dos meses de trabajo gratis.</p>
-                    <p class="guarantee-disclaimer">Aplica si las consultas se atienden con el proceso acordado. No
-                        prometemos resultados: prometemos instalación real y gestión seria.</p>
+                    <div class="timeline-item">
+                        <div class="day-marker">Día 4</div>
+                        <p>Probamos todo: mensaje → respuesta → link de turno → queda registrado.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="day-marker">Día 5</div>
+                        <p>Dejamos el seguimiento para los que preguntan y después no reservan.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="day-marker">Día 6</div>
+                        <p>Te mostramos a vos o a tu recepcionista cómo usarlo (simple, sin complicaciones).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="day-marker">Día 7</div>
+                        <p>Entrega final + revisión y próximos pasos (si querés sumar WhatsApp, llamadas o anuncios).
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Audience Section -->
-        <section class="audience-section light-section reveal">
+        <!-- 4) QUÉ INCLUYE / QUÉ NO INCLUYE -->
+        <section id="que-incluye" class="section-light">
             <div class="container">
-                <div class="grid-2">
-                    <div class="audience-col">
-                        <h3>Para quién es</h3>
+                <h2 class="section-title">Qué incluye el piloto / qué no incluye</h2>
+                <div class="comparison-grid">
+                    <div class="col-include">
+                        <h3 class="col-header include">Incluye</h3>
                         <ul class="check-list">
-                            <li>Dentistas (dueños/profesionales) vendiendo estética en IG.</li>
-                            <li>Quieren convertir consultas en turnos reales.</li>
-                            <li>Dispuestos a usar proceso y control.</li>
+                            <li>Conectar y configurar Instagram</li>
+                            <li>IA entrenada para blanqueamiento y alineadores</li>
+                            <li>Link para reservar evaluación estética</li>
+                            <li>Registro y orden de cada consulta</li>
+                            <li>Seguimiento (2–3 mensajes) si no agendan</li>
+                            <li>Ajustes y soporte durante los 7 días</li>
                         </ul>
                     </div>
-                    <div class="audience-col">
-                        <h3>Para quién NO es</h3>
+                    <div class="col-exclude">
+                        <h3 class="col-header exclude">No incluye</h3>
                         <ul class="cross-list">
-                            <li>Quien quiere "solo anuncios" sin cambiar su atención.</li>
-                            <li>Quien no va a seguir una rutina mínima (10 min/día).</li>
-                            <li>Busca "magia" sin disciplina operativa.</li>
+                            <li>WhatsApp (se puede sumar después)</li>
+                            <li>Llamadas por IA (se puede sumar después)</li>
+                            <li>Anuncios (se puede sumar después; la inversión la pone la clínica)</li>
+                            <li>Manejo de redes / posteos</li>
+                            <li>Promesas de resultados con números</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Who Am I Section -->
-        <section id="quien-soy" class="bio-section blueprint-bg-dark">
+        <!-- 5) OPCIONAL MÁS ADELANTE -->
+        <section id="opcional" class="section-gray">
             <div class="container">
-                <div class="bio-content">
-                    <h2 class="section-title text-white">¿Quién soy?</h2>
-                    <div class="profile-container">
-                        <img src="assets/images/ignacio.jpg" alt="Ignacio Ana" class="profile-pic">
+                <h2 class="section-title">Si después querés subir un nivel (opcional)</h2>
+                <div class="grid-options">
+                    <div class="option-block">
+                        <h3>WhatsApp</h3>
+                        <ul class="option-list">
+                            <li>Confirmar y reprogramar turnos por WhatsApp</li>
+                            <li>Mensajes para llenar huecos en agenda</li>
+                        </ul>
+                        <p class="note">El costo de WhatsApp/proveedor lo paga la clínica.</p>
                     </div>
-                    <h2>Soy Ignacio Ana.</h2>
-                    <p class="bio-intro">Hace 4 años que trabajo con negocios online y me especializo en
-                        <strong>Inteligencia Artificial</strong>.
-                    </p>
-                    <p>Diseñé un sistema simple para que las consultas de Instagram se conviertan en turnos confirmados
-                        (blanqueamiento y alineadores).</p>
-
-                    <div class="bio-grid-2">
-                        <div class="bio-card glass-card problem">
-                            <h3>El Problema</h3>
-                            <p>En la práctica, se pierden oportunidades por falta de proceso:</p>
-                            <ul class="bio-list">
-                                <li>Respuestas tarde.</li>
-                                <li>Poco seguimiento.</li>
-                                <li>Agenda irregular.</li>
-                                <li>Decisiones sin datos.</li>
-                            </ul>
-                        </div>
-                        <div class="bio-card glass-card solution">
-                            <h3>La Solución</h3>
-                            <p>Instalamos un sistema que ordena el flujo y lo mide para mejorar semana a semana.</p>
-                            <div class="flow-mini">Consultas → Turno → Confirmación → Recuperación</div>
-                        </div>
+                    <div class="option-block">
+                        <h3>Llamadas (IA)</h3>
+                        <ul class="option-list">
+                            <li>Llamar a los que no confirmaron</li>
+                            <li>Recuperar no-shows y ayudar a reprogramar</li>
+                        </ul>
+                        <p class="note">El costo del proveedor/minutos lo paga la clínica.</p>
+                    </div>
+                    <div class="option-block">
+                        <h3>Anuncios (si querés más consultas)</h3>
+                        <ul class="option-list">
+                            <li>Campañas para generar más mensajes</li>
+                            <li>El sistema ayuda a convertir mejor esas consultas</li>
+                        </ul>
+                        <p class="note">La inversión en anuncios la paga la clínica.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="faq-section blueprint-bg">
+        <!-- 6) PREGUNTAS FRECUENTES + GARANTÍA + CIERRE -->
+        <section id="faq" class="section-light">
             <div class="container">
-                <h2 class="section-title text-white">Preguntas Frecuentes</h2>
+                <h2 class="section-title">Preguntas frecuentes</h2>
                 <div class="faq-list">
-                    <!-- Open by default (1-5) -->
                     <details class="faq-item">
-                        <summary>1) ¿Qué es exactamente este piloto?</summary>
-                        <p>Es un piloto de 14 días donde dejamos instalado un sistema simple para convertir consultas de
-                            Instagram en turnos confirmados (blanqueamiento o alineadores), con seguimiento y control.
-                            Después, dejamos 30 días de anuncios corriendo para generar demanda y que el sistema trabaje
-                            con flujo real.</p>
+                        <summary>¿Necesito WhatsApp para empezar?</summary>
+                        <p>No. El piloto es solo por Instagram.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>2) ¿Esto es “marketing” o es un sistema?</summary>
-                        <p>No somos una agencia de “posteos” ni de promesas. Esto es proceso comercial: llega la
-                            consulta → se responde → se califica → se agenda → se confirma → se recupera si se cae → se
-                            mide. Si hoy perdés interesados, no es Instagram: es seguimiento.</p>
+                        <summary>¿Esto reemplaza a mi recepcionista?</summary>
+                        <p>No. Ayuda a responder rápido y ordenar. Cuando hace falta, tu equipo sigue atendiendo.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>3) ¿Para quién es (y para quién NO)?</summary>
-                        <p><strong>Sí:</strong> dentistas que ofrecen estética (blanqueamiento / alineadores) y reciben
-                            consultas por IG pero no las convierten en agenda.<br>
-                            <strong>No:</strong> si no tenés consultas ni base mínima, primero hay que resolver demanda
-                            (y ahí cambia el enfoque).
-                        </p>
+                        <summary>¿La IA da diagnóstico o precio exacto por chat?</summary>
+                        <p>No. No diagnostica por mensajes. Y solo dice lo que la clínica apruebe.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>4) ¿Qué instalan exactamente en 14 días?</summary>
-                        <p>Instalamos un flujo completo con etapas claras desde “consulta” hasta “turno confirmado” y
-                            seguimiento posterior (incluyendo casos de no-show y presupuesto). Incluye mensajes listos,
-                            recordatorios y un tablero simple para ver qué está pasando.</p>
+                        <summary>¿Qué necesita mi clínica para arrancar?</summary>
+                        <p>Instagram, horarios disponibles y una definición simple de lo que ofrecen (blanqueamiento y
+                            alineadores).</p>
                     </details>
                     <details class="faq-item">
-                        <summary>5) ¿Qué pasa si ya tengo recepcionista?</summary>
-                        <p>Perfecto: no la reemplaza. La ordena y la potencia. La recepcionista deja de “apagar
-                            incendios” y pasa a operar con rutina, etapas y prioridades claras (qué responder hoy, qué
-                            seguir, qué recuperar).</p>
+                        <summary>¿Cuándo queda funcionando?</summary>
+                        <p>Dentro de los 7 días, con pruebas de que todo anda.</p>
                     </details>
+                    <details class="faq-item">
+                        <summary>¿Qué pasa si alguien quiere hablar con una persona?</summary>
+                        <p>La IA pide sus datos y tu recepción lo contacta.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Puedo sumar WhatsApp o llamadas después?</summary>
+                        <p>Sí, se suma cuando el sistema base ya está funcionando.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Sirve si no hago anuncios?</summary>
+                        <p>Sí. Esto ordena y aprovecha mejor las consultas que ya te llegan por Instagram.</p>
+                    </details>
+                </div>
 
-                    <!-- Closed by default (6-10) -->
-                    <details class="faq-item">
-                        <summary>6) ¿Esto me obliga a cambiar todo mi sistema actual?</summary>
-                        <p>No. Se integra con lo que ya hacés y se adapta al canal que estás usando. La idea es sumar
-                            orden, no hacerte tirar todo a la basura.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>7) ¿Cómo evitan que se caigan los turnos (no-shows)?</summary>
-                        <p>Con confirmación y recordatorios antes del turno, y un protocolo simple si no viene: mensaje
-                            empático, re-agenda y seguimiento. El objetivo es subir asistencia con proceso, no con
-                            “esperanza”.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>8) ¿Cómo miden si esto funciona?</summary>
-                        <p>Medimos lo que importa:<br>
-                            - Velocidad de respuesta (speed to lead)<br>
-                            - Show rate (asistencia)<br>
-                            - No-show rate<br>
-                            - Pendientes 48h (lo que se está “pudriendo”)<br>
-                            - Reagendados</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>9) ¿Los anuncios están incluidos? ¿Qué hacen en esos 30 días?</summary>
-                        <p>Sí: dejamos 30 días de anuncios corriendo hacia Instagram para generar consultas y alimentar
-                            el sistema con demanda real. La lógica es simple: primero hacemos funcionar el flujo,
-                            después optimizamos.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>10) ¿Qué garantía tengo?</summary>
-                        <p>Si después de 30 días no vemos tracción, te doy dos meses de trabajo gratis.</p>
-                    </details>
+                <div class="guarantee-box">
+                    <strong>Garantía:</strong> si al día 7 no queda funcionando el circuito mensaje → turno → registro,
+                    seguimos sin cargo hasta dejarlo operativo.
                 </div>
             </div>
         </section>
-        <section id="diagnostico" class="final-cta-section">
-            <div class="container">
-                <div class="booking-layout">
-                    <!-- Left Side: Copy -->
-                    <div class="booking-copy">
-                        <h2 class="section-title text-white">Orden para vender más.</h2>
-                        <p class="text-white" style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">
-                            Prometemos un sistema que funciona y control sobre tu facturación.
-                        </p>
 
+        <section id="agendar" class="final-cta">
+            <div class="container text-center">
+                <h2>¿Lo dejamos armado en tu clínica en 7 días?</h2>
+                <p>Agendá una llamada de 15 minutos y te lo mostramos en vivo.</p>
 
-                        <div class="testimonial">
-                            "30 minutos para ver si podemos ayudarte a instalar este sistema en tu clínica o
-                            consultorio."
-                        </div>
-                    </div>
-
-                    <!-- Right Side: Calendar Widget -->
-                    <div class="calendar-wrapper">
-                        <iframe src="https://api.leadconnectorhq.com/widget/booking/lWLp8mJstb9Toc2vULb3"
-                            style="width: 100%; border:none; overflow: hidden; min-height: 750px;" scrolling="no"
-                            id="lWLp8mJstb9Toc2vULb3_1771509445380"></iframe><br>
-                        <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
-                    </div>
+                <!-- Calendar Widget as the primary booking CTA -->
+                <div class="calendar-wrapper-new">
+                    <iframe src="https://api.leadconnectorhq.com/widget/booking/lWLp8mJstb9Toc2vULb3"
+                        style="width: 100%; border:none; overflow: hidden; min-height: 750px;" scrolling="no"
+                        id="lWLp8mJstb9Toc2vULb3_1771509445380"></iframe><br>
+                    <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
                 </div>
+
+                <p class="note">Tomamos pocos pilotos por mes para implementarlo bien.</p>
             </div>
         </section>
+
+        <!-- Fixed Bottom Button for Mobile -->
+        <div class="mobile-sticky-btn">
+            <a href="#agendar" class="btn btn-primary btn-block">Agendar una llamada (15 min)</a>
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer"
-        style="background: #0a1628; border-top: 1px solid rgba(255,255,255,0.08); padding: 3rem 0 2rem;">
-        <div class="container footer-content"
-            style="display: flex; flex-direction: column; align-items: center; gap: 1.5rem; text-align: center;">
-            <div class="footer-logo" style="text-align: center;">
-                <div style="font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: 0.05em;">SCM <span
-                        style="color: #ff6b35;">Dental</span></div>
-                <div
-                    style="font-size: 0.75rem; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; margin-top: 0.25rem;">
-                    Infraestructura de crecimiento IA</div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="footer-socials" style="display: flex; gap: 1rem; align-items: center;">
-                <a href="https://www.linkedin.com/in/ignacio-ana/" target="_blank" rel="noopener" aria-label="LinkedIn"
-                    style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); transition: all 0.3s ease; text-decoration: none;"
-                    onmouseover="this.style.borderColor='#0A66C2';this.style.color='#0A66C2';this.style.background='rgba(10,102,194,0.1)'"
-                    onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.7)';this.style.background='rgba(255,255,255,0.05)'">
-                    <i data-feather="linkedin" style="width: 20px; height: 20px;"></i>
-                </a>
-                <a href="https://www.instagram.com/ignacio.scm/" target="_blank" rel="noopener" aria-label="Instagram"
-                    style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); transition: all 0.3s ease; text-decoration: none;"
-                    onmouseover="this.style.borderColor='#E4405F';this.style.color='#E4405F';this.style.background='rgba(228,64,95,0.1)'"
-                    onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.7)';this.style.background='rgba(255,255,255,0.05)'">
-                    <i data-feather="instagram" style="width: 20px; height: 20px;"></i>
-                </a>
-                <a href="https://www.youtube.com/@ignacioana-sistema-ventas" target="_blank" rel="noopener"
-                    aria-label="YouTube"
-                    style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); transition: all 0.3s ease; text-decoration: none;"
-                    onmouseover="this.style.borderColor='#FF0000';this.style.color='#FF0000';this.style.background='rgba(255,0,0,0.1)'"
-                    onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.7)';this.style.background='rgba(255,255,255,0.05)'">
-                    <i data-feather="youtube" style="width: 20px; height: 20px;"></i>
-                </a>
-                <a href="https://wa.link/f61dgq" target="_blank" rel="noopener" aria-label="WhatsApp"
-                    style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); transition: all 0.3s ease; text-decoration: none;"
-                    onmouseover="this.style.borderColor='#25D366';this.style.color='#25D366';this.style.background='rgba(37,211,102,0.1)'"
-                    onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='rgba(255,255,255,0.7)';this.style.background='rgba(255,255,255,0.05)'">
-                    <i data-feather="message-circle" style="width: 20px; height: 20px;"></i>
-                </a>
-            </div>
-
-            <p class="copyright"
-                style="color: rgba(255,255,255,0.4); font-size: 0.8rem; max-width: 400px; line-height: 1.5;">&copy; 2026
-                SCM Dental. Los resultados dependen de la ejecución del sistema y la inversión en pauta.</p>
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 SCM Dental.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script>
         feather.replace();
-    </script>
-    <script>
-        // Force Animations on Mobile
-        document.addEventListener("DOMContentLoaded", function () {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        });
-    </script>
-    <script>
-        // Reveal animations on scroll
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            // FORCE MOBILE VISIBILITY
-            if (window.innerWidth < 768) {
-                for (var i = 0; i < reveals.length; i++) {
-                    reveals[i].classList.add("active");
-                }
-                return; // Stop processing scroll logic on mobile
-            }
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        // Trigger once on load
-        reveal();
-
-        // Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        counters.forEach(counter => {
-            counter.innerText = '0';
-            const updateCounter = () => {
-                const target = +counter.getAttribute('data-target');
-                const c = +counter.innerText;
-                const increment = target / 200;
-                if (c < target) {
-                    counter.innerText = `${Math.ceil(c + increment)}`;
-                    setTimeout(updateCounter, 20);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-            // Simple trigger on load
-            updateCounter();
-        });
-
-        // AI Orb Microphone Permission Check
-        const frame = document.getElementById('assistantFrame');
-        if (frame) {
-            frame.addEventListener('load', () => {
-                if (navigator.permissions && navigator.permissions.query) {
-                    navigator.permissions.query({ name: 'microphone' })
-                        .then(result => {
-                            if (result.state === 'granted') {
-                                console.log('Microphone access already granted');
-                            } else if (result.state === 'prompt') {
-                                console.log('User will be prompted for microphone access');
-                            }
-                        })
-                        .catch(err => console.log('Mic permission query not supported', err));
-                }
-            });
-        }
     </script>
 </body>
 
