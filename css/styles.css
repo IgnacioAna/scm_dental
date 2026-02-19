@@ -2314,3 +2314,23 @@ section {
     }
 }
 
+
+/* Mobile Alignment Helpers */
+@media (max-width: 768px) {
+    .text-center-mobile {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .display-block-mobile {
+        display: block;
+        margin-top: 0.5rem;
+    }
+    
+    /* Ensure Header flex wraps correctly */
+    .header-content {
+        flex-direction: column;
+    }
+}
+
