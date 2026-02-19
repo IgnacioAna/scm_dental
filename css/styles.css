@@ -2183,3 +2183,134 @@ section {
         gap: 0.3rem;
     }
 }
+/* Bio Section Restoration */
+#quien-soy {
+    padding: 5rem 0;
+    background-color: #050b14; /* Darker than blue */
+}
+
+#quien-soy .bio-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+#quien-soy .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+#quien-soy .profile-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+#quien-soy .profile-pic {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+    box-shadow: 0 0 20px rgba(79, 246, 195, 0.2);
+}
+
+#quien-soy .bio-intro,
+#quien-soy .bio-content>p {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-white);
+    opacity: 0.9;
+}
+
+#quien-soy .section-title {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#quien-soy .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-orange);
+    content: '';
+    position: absolute;
+    bottom: 0;
+}
+
+#quien-soy .bio-grid-2 {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+}
+
+.bio-card {
+    padding: 2rem;
+    text-align: left;
+}
+
+.bio-card h3 {
+    color: var(--color-accent);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.bio-card p {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+}
+
+.bio-list {
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.bio-list li {
+    margin-bottom: 0.5rem;
+    color: rgba(255,255,255,0.8);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.bio-list li::before {
+    content: '•';
+    color: var(--color-orange);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.flow-mini {
+    margin-top: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    background: rgba(79, 246, 195, 0.1);
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #quien-soy .bio-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
