@@ -2362,3 +2362,16 @@ section {
 }
 
 
+
+/* Force Dark Background on Bio for Mobile */
+@media (max-width: 768px) {
+    #quien-soy {
+        background-color: #050b14 !important;
+        color: white !important;
+    }
+    
+    #quien-soy .bio-content {
+        background-color: transparent !important;
+    }
+}
+
