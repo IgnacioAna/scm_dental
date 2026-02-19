@@ -329,11 +329,17 @@ strong {
     align-items: center;
     width: 100%;
     margin-bottom: 2rem;
-    /* Reduced from 4rem */
     margin-top: 2rem;
-    /* Reduced from 4rem */
     position: relative;
     z-index: 5;
+}
+
+@media (max-width: 900px) {
+    .hero-orb-container {
+        margin-top: 3rem;
+        /* More space for prompt */
+        margin-bottom: 2rem;
+    }
 }
 
 .hero-features li.highlight-bonus {
@@ -418,56 +424,60 @@ strong {
     }
 }
 
-@media (max-width: 900px) {
-    .orb-interaction-prompt {
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        top: auto;
-        bottom: -60px;
-        /* Move below the orb */
-        flex-direction: column;
-        /* Text top, arrow bottom pointing up? No, let's keep text top */
-    }
+.orb-interaction-prompt {
+    right: auto;
+    left: 10px;
+    /* Align to left side */
+    transform: none;
+    /* Remove center transform */
+    top: -60px;
+    /* Move above the orb */
+    bottom: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align text to left */
+    pointer-events: none;
+    /* Ensure click-through */
+}
 
-    .prompt-text {
-        font-size: 0.9rem;
-        margin-bottom: 5px;
-    }
+.prompt-text {
+    font-size: 0.9rem;
+    margin-bottom: 0px;
+    text-align: left;
+}
 
-    .prompt-arrow {
-        transform: rotate(-80deg) scaleX(1);
-        /* Pointing UP-LEFT towards the orb */
-        margin-left: -5px;
-        /* Centered relative to text */
-        margin-top: -5px;
-    }
+.prompt-arrow {
+    transform: rotate(10deg) scaleX(1);
+    /* Pointing DOWN-RIGHT towards center */
+    margin-left: 20px;
+    margin-top: 0px;
+}
 
-    .hero-features li {
-        flex-direction: row;
-        /* Keep icon and text side-by-side */
-        align-items: flex-start;
-        /* Align to top of text */
-        gap: 10px;
-        text-align: left;
-    }
+.hero-features li {
+    flex-direction: row;
+    /* Keep icon and text side-by-side */
+    align-items: flex-start;
+    /* Align to top of text */
+    gap: 10px;
+    text-align: left;
+}
 
-    .hero-features li i {
-        min-width: 24px;
-        /* Prevent shrinking */
-        margin-top: 2px;
-        /* Align visual center with first line of text */
-    }
+.hero-features li i {
+    min-width: 24px;
+    /* Prevent shrinking */
+    margin-top: 2px;
+    /* Align visual center with first line of text */
+}
 
-    .hero-orb-frame {
-        height: 200px;
-        /* Slightly smaller on mobile */
-    }
+.hero-orb-frame {
+    height: 200px;
+    /* Slightly smaller on mobile */
+}
 
-    .hero-orb-container {
-        margin-bottom: 5rem;
-        /* More space for the prompt below */
-    }
+.hero-orb-container {
+    margin-bottom: 5rem;
+    /* More space for the prompt below */
+}
 }
 
 .flow-diagram-hero {
