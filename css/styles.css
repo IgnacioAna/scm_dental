@@ -430,8 +430,8 @@ strong {
     /* Align to left side */
     transform: none;
     /* Remove center transform */
-    top: -60px;
-    /* Move above the orb */
+    top: -40px;
+    /* Lowered from -60px to avoid text overlap */
     bottom: auto;
     flex-direction: column;
     align-items: flex-start;
