@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll Reveal Animation
-    const revealElements = document.querySelectorAll('.reveal');
+    // Scroll Reveal Animation (Enhanced)
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {

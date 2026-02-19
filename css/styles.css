@@ -1,4 +1,4 @@
-/* CSS Reset & Variable Definitions */
+﻿/* CSS Reset & Variable Definitions */
 :root {
     --color-blue: #0A3A6B;
     --color-white: #F8F4E3;
@@ -704,17 +704,52 @@ strong {
 
 /* Animations & Interactivity */
 
-/* Scroll Reveal */
+
+/* Scroll Reveal Enhanced */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+    will-change: opacity, transform;
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Card Hover Effects */
+.card, .glass-card, .bio-card {
+    transition: transform 0.3s ease, box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover, .glass-card:hover, .bio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+}
+
 
 /* Toast Notifications - Terminal Style */
 .toast-container {
@@ -1448,7 +1483,7 @@ section {
 }
 
 .check-list li::before {
-    content: '✔';
+    content: 'âœ”';
     position: absolute;
     left: 0;
     color: var(--color-blue);
@@ -1456,7 +1491,7 @@ section {
 }
 
 .cross-list li::before {
-    content: '✖';
+    content: 'âœ–';
     position: absolute;
     left: 0;
     color: var(--color-orange);
@@ -1765,7 +1800,7 @@ section {
 
 /* Custom bullets for Problem list */
 .bio-card.problem .bio-list li::before {
-    content: "×";
+    content: "Ã—";
     color: #ff6b6b;
     position: absolute;
     left: 0;
@@ -1855,7 +1890,7 @@ section {
     /* aire vertical */
 }
 
-/* Asegura que el container no esté empujando a la izquierda */
+/* Asegura que el container no estÃ© empujando a la izquierda */
 #quien-soy .container {
     max-width: 1200px;
     /* o el que uses */
@@ -1875,7 +1910,7 @@ section {
     margin: 0 auto;
 }
 
-/* Párrafos con ancho legible */
+/* PÃ¡rrafos con ancho legible */
 #quien-soy .bio-intro,
 #quien-soy .bio-content>p {
     max-width: 760px;
@@ -1883,7 +1918,7 @@ section {
     margin-right: auto;
 }
 
-/* Título de sección centrado */
+/* TÃ­tulo de secciÃ³n centrado */
 #quien-soy .section-title {
     display: inline-block;
     position: relative;
@@ -2165,14 +2200,6 @@ section {
         height: auto;
     }
 
-    /* Disable complex animations */
-    .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-        visibility: visible !important;
-    }
-
     .metrics-grid {
         gap: 1rem;
     }
@@ -2290,7 +2317,7 @@ section {
 }
 
 .bio-list li::before {
-    content: '�';
+    content: '•';
     color: var(--color-orange);
     position: absolute;
     left: 0;
@@ -2333,4 +2360,5 @@ section {
         flex-direction: column;
     }
 }
+
 
