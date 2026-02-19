@@ -424,60 +424,61 @@ strong {
     }
 }
 
-.orb-interaction-prompt {
-    right: auto;
-    left: 10px;
-    /* Align to left side */
-    transform: none;
-    /* Remove center transform */
-    top: -40px;
-    /* Lowered from -60px to avoid text overlap */
-    bottom: auto;
-    flex-direction: column;
-    align-items: flex-start;
-    /* Align text to left */
-    pointer-events: none;
-    /* Ensure click-through */
-}
+@media (max-width: 900px) {
+    .orb-interaction-prompt {
+        right: auto;
+        left: 10px;
+        /* Align to left side */
+        transform: none;
+        /* Remove center transform */
+        top: -10px;
+        /* Lowered significantly to separate from Bonus text */
+        bottom: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        /* Align text to left */
+        pointer-events: none;
+        /* Ensure click-through */
+    }
 
-.prompt-text {
-    font-size: 0.9rem;
-    margin-bottom: 0px;
-    text-align: left;
-}
+    .prompt-text {
+        font-size: 0.9rem;
+        margin-bottom: 0px;
+        text-align: left;
+    }
 
-.prompt-arrow {
-    transform: rotate(10deg) scaleX(1);
-    /* Pointing DOWN-RIGHT towards center */
-    margin-left: 20px;
-    margin-top: 0px;
-}
+    .prompt-arrow {
+        transform: rotate(20deg) scaleX(1);
+        /* Pointing DOWN-RIGHT towards center/orb */
+        margin-left: 20px;
+        margin-top: -5px;
+    }
 
-.hero-features li {
-    flex-direction: row;
-    /* Keep icon and text side-by-side */
-    align-items: flex-start;
-    /* Align to top of text */
-    gap: 10px;
-    text-align: left;
-}
+    .hero-features li {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+        text-align: left;
+    }
 
-.hero-features li i {
-    min-width: 24px;
-    /* Prevent shrinking */
-    margin-top: 2px;
-    /* Align visual center with first line of text */
-}
+    .hero-features li i {
+        min-width: 24px;
+        /* Prevent shrinking */
+        margin-top: 2px;
+        /* Align visual center with first line of text */
+    }
 
-.hero-orb-frame {
-    height: 200px;
-    /* Slightly smaller on mobile */
-}
+    .hero-orb-frame {
+        height: 200px;
+        /* Slightly smaller on mobile */
+    }
 
-.hero-orb-container {
-    margin-bottom: 5rem;
-    /* More space for the prompt below */
-}
+    .hero-orb-container {
+        margin-top: 4rem;
+        /* Increased to accommodate the lower prompt */
+        margin-bottom: 1rem;
+        /* Reduced to pull diagram closer */
+    }
 }
 
 .flow-diagram-hero {
