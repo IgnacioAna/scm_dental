@@ -741,13 +741,17 @@ strong {
 }
 
 /* Card Hover Effects */
-.card, .glass-card, .bio-card {
+.card,
+.glass-card,
+.bio-card {
     transition: transform 0.3s ease, box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.card:hover, .glass-card:hover, .bio-card:hover {
+.card:hover,
+.glass-card:hover,
+.bio-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
 }
 
 
@@ -1483,19 +1487,21 @@ section {
 }
 
 .check-list li::before {
-    content: 'âœ”';
+    content: '\2713';
+    /* Checkmark */
     position: absolute;
     left: 0;
-    color: var(--color-blue);
-    font-size: 1rem;
+    color: var(--color-accent);
+    font-weight: bold;
 }
 
 .cross-list li::before {
-    content: 'âœ–';
+    content: '\2715';
+    /* Cross */
     position: absolute;
     left: 0;
-    color: var(--color-orange);
-    font-size: 1rem;
+    color: #e53e3e;
+    font-weight: bold;
 }
 
 /* FAQ */
@@ -1800,7 +1806,8 @@ section {
 
 /* Custom bullets for Problem list */
 .bio-card.problem .bio-list li::before {
-    content: "Ã—";
+    content: "\2715";
+    /* Cross */
     color: #ff6b6b;
     position: absolute;
     left: 0;
@@ -2210,10 +2217,12 @@ section {
         gap: 0.3rem;
     }
 }
+
 /* Bio Section Restoration */
 #quien-soy {
     padding: 5rem 0;
-    background-color: #050b14; /* Darker than blue */
+    background-color: #050b14;
+    /* Darker than blue */
 }
 
 #quien-soy .bio-content {
@@ -2293,13 +2302,13 @@ section {
 
 .bio-card h3 {
     color: var(--color-accent);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
 
 .bio-card p {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 0.95rem;
 }
 
@@ -2311,13 +2320,14 @@ section {
 
 .bio-list li {
     margin-bottom: 0.5rem;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     position: relative;
     padding-left: 1.5rem;
 }
 
 .bio-list li::before {
-    content: '•';
+    content: '\2713';
+    /* Checkmark */
     color: var(--color-orange);
     position: absolute;
     left: 0;
@@ -2336,46 +2346,48 @@ section {
 }
 
 @media (max-width: 768px) {
-    #quien-soy .bio-grid-2 {
-        grid-template-columns: 1fr;
+    /* Force Dark Background on Bio for Mobile */
+    @media (max-width: 768px) {
+        #quien-soy {
+            background-color: #050b14 !important;
+            color: white !important;
+        }
+
+        #quien-soy .bio-content {
+            background-color: transparent !important;
+        }
     }
-}
 
 
-/* Mobile Alignment Helpers */
-@media (max-width: 768px) {
-    .text-center-mobile {
-        text-align: center;
-        width: 100%;
-        margin-bottom: 1rem;
+    /* Mobile Alignment Helpers */
+    @media (max-width: 768px) {
+        .text-center-mobile {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .display-block-mobile {
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* Ensure Header flex wraps correctly */
+        .header-content {
+            flex-direction: column;
+        }
     }
-    
-    .display-block-mobile {
-        display: block;
-        margin-top: 0.5rem;
+
+
+
+    /* Force Dark Background on Bio for Mobile */
+    @media (max-width: 768px) {
+        #quien-soy {
+            background-color: #050b14 !important;
+            color: white !important;
+        }
+
+        #quien-soy .bio-content {
+            background-color: transparent !important;
+        }
     }
-    
-    /* Ensure Header flex wraps correctly */
-    .header-content {
-        flex-direction: column;
-    }
-}
-
-
-
-/* Force Dark Background on Bio for Mobile */
-@media (max-width: 768px) {
-    #quien-soy {
-        background-color: #050b14 !important;
-        color: white !important;
-    }
-    
-    #quien-soy .bio-content {
-        background-color: transparent !important;
-    }
-}
-
-
-
-
-
