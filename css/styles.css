@@ -1583,9 +1583,42 @@ section {
 }
 
 .calendar-day.today {
-    border: 1px solid var(--color-orange);
-    color: var(--color-orange);
+    margin-right: auto;
+}
+
+/* Feature Items (Checkmarks) */
+.feature-item {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.feature-icon {
+    width: 28px;
+    height: 28px;
+    stroke-width: 3px;
+    /* Thicker stroke */
+    color: var(--color-blue-light);
+    /* Or keep white if preferred, using light blue for now to pop */
+    flex-shrink: 0;
+}
+
+/* Bonus Highlight Style */
+.highlight-bonus {
+    color: var(--color-green);
     font-weight: 700;
+    font-size: 1.15rem;
+    /* Slightly larger */
+    margin-top: 5px;
+    text-shadow: 0 0 10px rgba(0, 255, 179, 0.3);
+    /* Subtle glow */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
 }
 
 .calendar-times {
