@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startSimulation() {
             const events = [
-                "Nueva consulta: Alineadores (Instagram DM)",
-                "Evaluación agendada: Alineadores (Jueves 10:00)",
-                "Recordatorio enviado — Turno confirmado",
-                "Lead calificado: Interesado en alineadores",
-                "Handoff a recepción: Lead solicita hablar",
-                "Consulta respondida en <15s (Instagram DM)"
+                "Nuevo turno agendado: Dr. Martínez",
+                "Recordatorio enviado (WhatsApp) - Entregado",
+                "Paciente recuperado: Campaña Blanqueamiento",
+                "Turno confirmado: Alineadores (Viernes 15:00)",
+                "Lead calificado: Interesado en Carillas",
+                "Reporte semanal generado: +22% Conversión"
             ];
 
             const randomEvent = () => {
