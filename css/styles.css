@@ -201,10 +201,14 @@ body::after {
 }
 main { position: relative; z-index: 1; }
 section {
-  padding: 110px 0;
+  padding: 90px 0;
   position: relative;
 }
-section + section { padding-top: 90px; }
+section + section { padding-top: 70px; }
+@media (max-width: 720px) {
+  section { padding: 60px 0; }
+  section + section { padding-top: 50px; }
+}
 
 /* ---------- TYPOGRAPHY ---------- */
 h1, h2, h3, h4 {
@@ -413,9 +417,19 @@ section > .container > .eyebrow { display: block; width: fit-content; margin-lef
 
 /* ---------- HERO ---------- */
 .hero {
-  padding: 140px 0 120px;
+  padding: 70px 0 90px;
   position: relative;
   overflow: hidden;
+}
+@media (max-width: 720px) {
+  .hero { padding: 36px 0 60px; }
+  .hero-text h1 { margin-bottom: 18px; }
+  .hero-desc { font-size: 1.05rem; margin-bottom: 24px; }
+  .hero-chips { margin-bottom: 28px; gap: 8px; }
+  .hero-ctas { gap: 10px; }
+  .hero-ctas .btn-large { padding: 16px 24px; font-size: 0.95rem; }
+  .hero-sidebar { padding: 22px; }
+  .floating-icons { display: none; }
 }
 .hero-layout {
   display: grid;
@@ -1349,13 +1363,23 @@ h2.section-title {
 
 /* Hero h1 cinematic wipe reveal (preserves gradient) */
 .hero h1 {
-  clip-path: inset(0 100% 0 0);
   animation:
     gradient-pan 8s ease-in-out infinite,
-    hero-wipe 1.4s var(--ease-out) 0.25s forwards;
+    hero-wipe 1.2s var(--ease-out) 0.2s both;
 }
 @keyframes hero-wipe {
-  to { clip-path: inset(0 0 0 0); }
+  from { clip-path: inset(0 100% 0 0); opacity: 0.3; }
+  to   { clip-path: inset(0 0 0 0);   opacity: 1; }
+}
+/* En mobile: skip wipe (puede tener bugs de layout) */
+@media (max-width: 720px) {
+  .hero h1 {
+    animation: gradient-pan 8s ease-in-out infinite, hero-fade-up 800ms var(--ease-out) both;
+  }
+  @keyframes hero-fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 }
 
 /* Floating decorative SVG dental icons */
@@ -1423,5 +1447,30 @@ h2.section-title {
   .floating-icons span, .sales-popup.show {
     animation: none !important;
   }
-  .hero h1 .word { opacity: 1; transform: none; animation: none; }
+}
+
+/* ---------- MOBILE: simplificar animaciones ---------- */
+@media (max-width: 720px) {
+  /* Apagar bucles infinitos pesados */
+  h1, h2.section-title { animation: none; }
+  .bonus-result-number, .cost-number, .proceso-duration-number {
+    animation: none;
+  }
+  .mission-icon, .vision-icon, .bonus-main-icon,
+  .proceso-transfer-icon, .popup-icon, .agendar-info-icon,
+  .proceso-phase-icon { animation: none; }
+  .sales-popup.show { animation: none; }
+  body::before { animation: none; }
+
+  /* Acelerar y simplificar reveals */
+  .reveal, .reveal-left, .reveal-right {
+    transition-duration: 500ms;
+    transform: translateY(20px);
+  }
+  .reveal-left, .reveal-right { transform: translateY(20px); }
+
+  /* Hover transforms a menor magnitud (solo afectan en :active en touch) */
+  .glass-card:hover, .number-card:hover {
+    transform: translateY(-3px);
+  }
 }

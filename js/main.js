@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- HERO PARALLAX (subtle) ---------- */
-  if (!reduceMotion) {
+  /* ---------- HERO PARALLAX (desktop only) ---------- */
+  if (!reduceMotion && !isTouch) {
     const heroSidebar = document.querySelector('.hero-sidebar');
     const heroText = document.querySelector('.hero-text');
     let ticking = false;
