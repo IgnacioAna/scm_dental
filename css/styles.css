@@ -423,10 +423,26 @@ section > .container > .eyebrow { display: block; width: fit-content; margin-lef
 }
 @media (max-width: 720px) {
   .hero { padding: 36px 0 60px; }
+  /* Centrar todo el contenido del hero en mobile */
+  .hero-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .hero-text h1 { margin-bottom: 18px; }
-  .hero-desc { font-size: 1.05rem; margin-bottom: 24px; }
-  .hero-chips { margin-bottom: 28px; gap: 8px; }
-  .hero-ctas { gap: 10px; }
+  .hero-desc {
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-chips {
+    margin-bottom: 28px;
+    gap: 8px;
+    justify-content: center;
+  }
+  .hero-ctas { gap: 10px; justify-content: center; }
   .hero-ctas .btn-large { padding: 16px 24px; font-size: 0.95rem; }
   .hero-sidebar { padding: 22px; }
   .floating-icons { display: none; }
@@ -1449,28 +1465,18 @@ h2.section-title {
   }
 }
 
-/* ---------- MOBILE: simplificar animaciones ---------- */
+/* ---------- MOBILE: ajustes finos sin matar las animaciones ---------- */
 @media (max-width: 720px) {
-  /* Apagar bucles infinitos pesados */
-  h1, h2.section-title { animation: none; }
-  .bonus-result-number, .cost-number, .proceso-duration-number {
-    animation: none;
-  }
-  .mission-icon, .vision-icon, .bonus-main-icon,
-  .proceso-transfer-icon, .popup-icon, .agendar-info-icon,
-  .proceso-phase-icon { animation: none; }
-  .sales-popup.show { animation: none; }
-  body::before { animation: none; }
-
-  /* Acelerar y simplificar reveals */
+  /* Reveals con menos desplazamiento en pantalla chica */
   .reveal, .reveal-left, .reveal-right {
-    transition-duration: 500ms;
-    transform: translateY(20px);
+    transform: translateY(24px);
+    transition-duration: 650ms;
   }
-  .reveal-left, .reveal-right { transform: translateY(20px); }
+  .reveal-left, .reveal-right { transform: translateY(24px); }
 
-  /* Hover transforms a menor magnitud (solo afectan en :active en touch) */
-  .glass-card:hover, .number-card:hover {
-    transform: translateY(-3px);
+  /* Glow menos intenso para no saturar la GPU mobile */
+  @keyframes number-glow {
+    0%, 100% { filter: drop-shadow(0 0 12px rgba(255,138,76,0.25)); }
+    50%      { filter: drop-shadow(0 0 22px rgba(255,138,76,0.45)); }
   }
 }
