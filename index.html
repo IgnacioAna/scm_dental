@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=10">
+  <link rel="stylesheet" href="css/styles.css?v=11">
   <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
@@ -34,6 +34,9 @@
 
   <!-- HERO -->
   <header class="hero">
+    <div class="floating-icons" aria-hidden="true">
+      <span>🦷</span><span>🦷</span><span>✦</span><span>✦</span>
+    </div>
     <div class="container">
       <div class="eyebrow reveal">SCM Dental · Reactivación y retención</div>
       <div class="hero-layout reveal reveal-delay-1">
@@ -42,7 +45,7 @@
           <p class="muted hero-desc">Implementamos infraestructura para recuperar pacientes dormidos, sostener el seguimiento y mejorar la fidelización sin sumar carga al equipo.</p>
           <div class="hero-chips">
             <span class="stat-chip"><strong class="text-accent">24/7</strong> respuesta automática</span>
-            <span class="stat-chip"><strong class="text-accent">3 meses</strong> de operación</span>
+            <span class="stat-chip"><strong class="text-accent">2 meses</strong> de operación</span>
             <span class="stat-chip"><strong class="text-accent">6 módulos</strong> operativos</span>
           </div>
           <div class="hero-ctas">
@@ -125,9 +128,9 @@
         <h2 class="section-title reveal">Implementación, operación y transferencia</h2>
         <p class="section-sub reveal">El sistema se construye a medida para cada clínica. No es una plantilla: se diseña en base a cómo opera tu equipo, qué tratamientos ofrecés y cómo se mueve tu agenda.</p>
 
-        <!-- Banner 3 meses -->
+        <!-- Banner 2 meses -->
         <div class="proceso-duration reveal">
-          <div class="proceso-duration-number">3</div>
+          <div class="proceso-duration-number">2</div>
           <div class="proceso-duration-text">
             <span class="proceso-duration-label">Meses de operación dedicada</span>
             <span class="proceso-duration-sub">Yo opero, optimizo y ajusto el sistema personalmente. No es configurar y soltar: es trabajo continuo adaptado a la realidad de cada clínica.</span>
@@ -218,8 +221,8 @@
           </div>
           <div class="glass-card bonus-result-card">
             <div class="bonus-result-eyebrow">Resultado esperado</div>
-            <div class="bonus-result-number">+300%</div>
-            <p>más reseñas en Google en los primeros 3 meses</p>
+            <div class="bonus-result-number"><span class="counter" data-target="300" data-prefix="+" data-suffix="%">+0%</span></div>
+            <p>más reseñas en Google en los primeros 2 meses</p>
             <div class="bonus-result-note">
               <i data-feather="info"></i>
               <span>Basado en clínicas que pasan de 0-2 reseñas/mes a un flujo constante post-turno.</span>
@@ -294,7 +297,7 @@
             <div class="eyebrow">Hacé la cuenta</div>
             <p>Si tenés <strong>2.000 pacientes dormidos</strong> y recuperamos solo el <strong>5%</strong>, son <strong>100 pacientes</strong>.</p>
             <p>Si cada tratamiento vale <strong>USD 150</strong>, eso son:</p>
-            <div class="cost-number">USD 15.000</div>
+            <div class="cost-number">USD <span class="counter" data-target="15000" data-format="thousands">0</span></div>
             <p class="cost-note">Dinero que ya existe. Está dormido.</p>
           </div>
         </div>
@@ -311,7 +314,7 @@
         <div class="eyebrow reveal">FAQ</div>
         <h2 class="section-title reveal">Preguntas frecuentes</h2>
         <div class="faq-list">
-          <details class="glass-card faq-item reveal"><summary>¿Es un sistema de 3 meses?</summary><p class="muted">Sí. Es el formato base para instalar, operar, optimizar y transferir el sistema. Durante esos 3 meses yo trabajo dedicado para tu clínica.</p></details>
+          <details class="glass-card faq-item reveal"><summary>¿Es un sistema de 2 meses?</summary><p class="muted">Sí. Es el formato base para instalar, operar, optimizar y transferir el sistema. Durante esos 2 meses yo trabajo dedicado para tu clínica.</p></details>
           <details class="glass-card faq-item reveal"><summary>¿Necesito cambiar mi recepción?</summary><p class="muted">No. El sistema acompaña al equipo, no lo reemplaza.</p></details>
           <details class="glass-card faq-item reveal"><summary>¿Incluye WhatsApp?</summary><p class="muted">Sí. La activación principal puede hacerse por WhatsApp o por el canal principal de la clínica.</p></details>
           <details class="glass-card faq-item reveal"><summary>¿Incluye llamadas con IA?</summary><p class="muted">Sí. Es la segunda opción para activar, seguir o reagendar según el flujo que convenga.</p></details>
@@ -395,7 +398,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=11"></script>
   <script>feather.replace();</script>
 </body>
 </html>

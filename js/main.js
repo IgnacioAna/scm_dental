@@ -184,7 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- ANIMATED COUNTERS (if any [data-target]) ---------- */
+  /* ---------- ANIMATED COUNTERS ---------- */
+  const fmtThousands = n => n.toLocaleString('es-AR').replace(/,/g, '.');
   const counters = document.querySelectorAll('.counter[data-target]');
   if (counters.length) {
     const counterObs = new IntersectionObserver((entries, obs) => {
@@ -194,18 +195,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = +el.dataset.target;
         const suffix = el.dataset.suffix || '';
         const prefix = el.dataset.prefix || '';
-        const dur = 1800;
+        const useThousands = el.dataset.format === 'thousands';
+        const dur = 2000;
         const start = performance.now();
         const step = now => {
           const t = Math.min((now - start) / dur, 1);
           const eased = 1 - Math.pow(1 - t, 3);
-          el.textContent = prefix + Math.round(target * eased) + suffix;
+          const val = Math.round(target * eased);
+          el.textContent = prefix + (useThousands ? fmtThousands(val) : val) + suffix;
           if (t < 1) requestAnimationFrame(step);
         };
         requestAnimationFrame(step);
         obs.unobserve(el);
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.4 });
     counters.forEach(c => counterObs.observe(c));
+  }
+
+  /* ---------- HERO H1 WORD-BY-WORD REVEAL ---------- */
+  const heroH1 = document.querySelector('.hero h1');
+  if (heroH1 && !reduceMotion) {
+    const text = heroH1.textContent.trim();
+    const words = text.split(/\s+/);
+    heroH1.innerHTML = words
+      .map((w, i) => `<span class="word" style="animation-delay:${i * 70}ms">${w}</span>`)
+      .join(' ');
   }
 });
