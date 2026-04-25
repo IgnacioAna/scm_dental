@@ -250,7 +250,15 @@ p { color: var(--text-muted); font-size: 1.02rem; }
 
 .text-orange { color: var(--orange-400); }
 .text-accent {
-  background: var(--grad-gold);
+  background: linear-gradient(135deg, var(--teal-200), var(--teal-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+/* Reservado para warnings / pérdidas */
+.text-warning {
+  background: linear-gradient(135deg, #ffb088, #ff5a14);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -622,8 +630,8 @@ section > .container > .eyebrow { display: block; width: fit-content; margin-lef
   display: flex; align-items: center; gap: 28px;
   margin: 50px auto 60px;
   padding: 30px 36px;
-  background: linear-gradient(135deg, rgba(245,185,100,0.10), rgba(43,199,173,0.05));
-  border: 1px solid rgba(245,185,100,0.25);
+  background: linear-gradient(135deg, rgba(43,199,173,0.12), rgba(43,199,173,0.04));
+  border: 1px solid rgba(43,199,173,0.30);
   border-radius: var(--radius-lg);
   max-width: 760px;
   position: relative;
@@ -632,14 +640,14 @@ section > .container > .eyebrow { display: block; width: fit-content; margin-lef
 .proceso-duration::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(60% 80% at 0% 50%, rgba(245,185,100,0.18), transparent 60%);
+  background: radial-gradient(60% 80% at 0% 50%, rgba(43,199,173,0.20), transparent 60%);
   pointer-events: none;
 }
 .proceso-duration-number {
   font-family: var(--font-display);
   font-size: clamp(4rem, 8vw, 6rem);
   font-weight: 600;
-  background: var(--grad-gold);
+  background: linear-gradient(135deg, var(--teal-200), var(--teal-500));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -764,7 +772,7 @@ section > .container > .eyebrow { display: block; width: fit-content; margin-lef
   text-wrap: balance;
 }
 .proceso-closing strong {
-  background: var(--grad-gold);
+  background: linear-gradient(135deg, var(--teal-200), var(--teal-500));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -820,27 +828,27 @@ section > .container > .eyebrow { display: block; width: fit-content; margin-lef
   padding: 36px;
   text-align: center;
   display: flex; flex-direction: column; align-items: center; gap: 12px;
-  background: linear-gradient(160deg, rgba(245,185,100,0.10), rgba(255,255,255,0.02));
-  border-color: rgba(245,185,100,0.30);
+  background: linear-gradient(160deg, rgba(43,199,173,0.12), rgba(255,255,255,0.02));
+  border-color: rgba(43,199,173,0.30);
 }
 .bonus-result-eyebrow {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--gold-300);
+  color: var(--teal-200);
   font-weight: 700;
 }
 .bonus-result-number {
   font-family: var(--font-display);
   font-size: clamp(3.5rem, 7vw, 5.5rem);
   font-weight: 600;
-  background: var(--grad-gold);
+  background: linear-gradient(135deg, var(--teal-200), var(--teal-500));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   line-height: 1;
   letter-spacing: -0.04em;
-  text-shadow: 0 0 60px rgba(245,185,100,0.3);
+  text-shadow: 0 0 60px rgba(43,199,173,0.35);
 }
 .bonus-result-card p { font-size: 1.05rem; color: var(--ink-200); }
 .bonus-result-note {
@@ -1339,17 +1347,15 @@ h2.section-title {
   transform: translateY(-3px) scale(1.02);
 }
 
-/* Hero h1 word-by-word reveal */
-.hero h1 .word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(40px) rotateX(-30deg);
-  transform-origin: 50% 100%;
-  animation: word-in 900ms var(--ease-out) forwards;
+/* Hero h1 cinematic wipe reveal (preserves gradient) */
+.hero h1 {
+  clip-path: inset(0 100% 0 0);
+  animation:
+    gradient-pan 8s ease-in-out infinite,
+    hero-wipe 1.4s var(--ease-out) 0.25s forwards;
 }
-.hero h1 .word + .word { margin-left: 0.25em; }
-@keyframes word-in {
-  to { opacity: 1; transform: translateY(0) rotateX(0); }
+@keyframes hero-wipe {
+  to { clip-path: inset(0 0 0 0); }
 }
 
 /* Floating decorative SVG dental icons */

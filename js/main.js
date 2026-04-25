@@ -212,13 +212,4 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(c => counterObs.observe(c));
   }
 
-  /* ---------- HERO H1 WORD-BY-WORD REVEAL ---------- */
-  const heroH1 = document.querySelector('.hero h1');
-  if (heroH1 && !reduceMotion) {
-    const text = heroH1.textContent.trim();
-    const words = text.split(/\s+/);
-    heroH1.innerHTML = words
-      .map((w, i) => `<span class="word" style="animation-delay:${i * 70}ms">${w}</span>`)
-      .join(' ');
-  }
 });
